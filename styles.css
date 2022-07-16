@@ -100,8 +100,41 @@ button:hover {
     margin-top: 40px;
     margin: auto;
     width: 300px;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: aqua;
     font-size: 30px;
     background-color: white;
+    
+}
+
+#result:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1)
+}
+
+#userScore {
+    background-color: lightcoral;
+    border-radius: 50px;
+    border: 3px solid white;
+    width: 300px;
+    height: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+#computerScore {
+    background-color: lightcoral;
+    border-radius: 50px;
+    border: 3px solid white;
+    width: 300px;
+    height: 20px;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.p {
+  line-height: 0px;
+  font-size: 22px;
+  position: relative;
+  bottom: 13px
 }
