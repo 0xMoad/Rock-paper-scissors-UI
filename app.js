@@ -70,21 +70,19 @@ const tie = () => {
    
 }
 
+let player = buttons.forEach(button => {
+    button.addEventListener("click", function(event){
+       userSelection.innerHTML = button.textContent;
+       userSelection.classList.add("inPlay");
+       computerPlay();
+       console.log(playRound())
+       
+    })
+    })
+
 // reset to default after gameOver
 
-const resetContainers = () => {
-    userContainer.innerHTML = "User chose:"
-    userSelection.innerHTML = ""
-    computerContainer.innerHTML = "Computer chose:" 
-    computerSelection.innerHTML = ""
-    userContainer.style.color = "black"
-    userContainer.style.backgroundColor = "rgb(255,0,255)"
-    computerContainer.style.color = "black"
-    computerContainer.style.backgroundColor = "rgb(255,0,255)"
-    playerPoints = 0;
-    computerPoints = 0;
-    
-}
+
 
 // PLay a round
 const playRound = () => {
@@ -144,37 +142,42 @@ const playRound = () => {
 
 // Making each button usable
 
-let player = buttons.forEach(button => {
-     button.addEventListener("click", function(event){
-        userSelection.innerHTML = button.textContent;
-        userSelection.classList.add("inPlay");
-        computerPlay();
-        console.log(playRound())
-        
-     })
-     })
 
 
 
 
-const reset = () => {
-     if(playerPoints === 3 || computerPoints === 3) {
-        if(playerPoints > computerPoints){
-                    alert("Player won first to three!")
-                     winner.innerHTML = "WINNER"
-                     userScore.innerHTML = "You have: 0 points"
-                     computerScore.innerHTML = "You have: 0 points"
-                     resetContainers()
-                 } else {
-                     alert("Game over! Computer was first to three!")
-                 winner.innerHTML = "WINNER"
-                 userScore.innerHTML = "Points"
-                 computerScore.innerHTML = "Points"
-                 resetContainers()
-                 }
-    }
+
+
+
+
+
+
+const resetContainers = () => {
+    userSelection.innerHTML = ""
+    computerSelection.innerHTML = ""
+   userContainer.style.color = "black"
+   userContainer.style.backgroundColor = "rgb(255,0,255)"
+   computerContainer.style.color = "black"
+   computerContainer.style.backgroundColor = "rgb(255,0,255)"
+   playerPoints = 0;
+   computerPoints = 0;
+   
 }
 
-
-
-
+const reset = () => {
+    if(playerPoints === 3 || computerPoints === 3) {
+       if(playerPoints > computerPoints){
+                   alert("Player won first to three!")
+                    winner.innerHTML = "WINNER"
+                    userScore.innerHTML = "You have: 0 points"
+                    computerScore.innerHTML = "You have: 0 points"
+                    resetContainers()
+                } else {
+                    alert("Game over! Computer was first to three!")
+                winner.innerHTML = "WINNER"
+                userScore.innerHTML = "Points"
+                computerScore.innerHTML = "Points"
+                resetContainers()
+                }
+   }
+}
